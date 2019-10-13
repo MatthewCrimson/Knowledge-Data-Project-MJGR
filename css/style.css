@@ -1,13 +1,117 @@
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+* {
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
   margin: 0;
 }
 
 header {
-  height: 30vh;
+  height: 15vh;
   background: #f3f3f3;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+header .box h2 {
+  padding: 1rem;
+  background: blue;
+}
+
+.container {
+  width: 80%;
+  height: 100%;
+  background: #f6f6f6;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+}
+
+#main-section {
+  margin-top: 1.5rem;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+}
+
+#selection-box {
+ height: 100%;
+ width: 22.5%;
+ background: #eaeaea;
+ display: flex;
+ padding: .5rem;
+ flex-direction: column;
+ position: relative;
+}
+
+#selection-head {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#selection-head h3 {
+  margin: 0;
+  margin-top: .5rem;
+  font-size: 1.25rem;
+  font-weight: 1;
+}
+
+#selection-list {
+  height: 80%;
+}
+
+#selection-list ul {
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+#selection-list ul a {
+  text-decoration: none;
+  color: inherit;
+  
+}
+
+#selection-list ul a:hover li{
+  background: lightblue;
+}
+
+#selection-list ul li {
+  padding: .75rem;
+  background: #f2f2f2;
+  margin-bottom: .1rem;
+  transition: all .2s ease-in-out;
+}
+
+#selection-box #search-button {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#selection-box #search-button a {
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem 40%;
+  background: lightblue;
+}
+
+#map-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#map-box iframe {
+  margin: 0 auto;
 }
