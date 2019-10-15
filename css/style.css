@@ -18,7 +18,8 @@ header {
 
 header .box h2 {
   padding: 1rem;
-  background: blue;
+  background: #3498db;
+  color: white;
 }
 
 .container {
@@ -85,7 +86,8 @@ header .box h2 {
 }
 
 #selection-list ul a:hover li{
-  background: lightblue;
+  background: #3498db;
+  color: white;
 }
 
 #selection-list ul li {
@@ -107,8 +109,8 @@ header .box h2 {
   text-decoration: none;
   text-align: center;
   padding: .75rem 40%;
-  color: inherit;
-  background: lightblue;
+  color: #fff;
+  background: #3498db;
 }
 
 #map-box {
