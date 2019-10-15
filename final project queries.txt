@@ -1,0 +1,65 @@
+standard prefixes:
+prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX db: <http://dbpedia.org/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fp: <http://www.semanticweb.org/group69/finalproject/>
+
+getting asian restaurants:
+CONSTRUCT{
+  ?restaurant rdf:type fp:AsianRestaurant .
+  ?restaurant fp:hasLatitude ?lat .
+  ?restaurant fp:hasLongitude ?long .
+} WHERE {
+  ?restaurant rdf:type dbo:Restaurant .
+  ?restaurant dbp:city dbr:Amsterdam .
+  ?restaurant geo:lat ?lat .
+  ?restaurant geo:long ?long .
+  ?restaurant dbo:cuisine ?cuisine .
+  FILTER regex(?cuisine, "Asian")
+} 
+LIMIT 10
+
+getting french restaurants:
+CONSTRUCT{
+  ?restaurant rdf:type fp:FrenchRestaurant .
+  ?restaurant fp:hasLatitude ?lat .
+  ?restaurant fp:hasLongitude ?long .
+} WHERE {
+  ?restaurant rdf:type dbo:Restaurant .
+  ?restaurant dbp:city dbr:Amsterdam .
+  ?restaurant geo:lat ?lat .
+  ?restaurant geo:long ?long .
+  ?restaurant dbo:cuisine ?cuisine .
+  FILTER regex(?cuisine, "French")
+} 
+LIMIT 10
+
+getting history musea:
+CONSTRUCT{
+  ?museum rdf:type fp:HistoryMusea .
+  ?museum fp:hasLatitude ?lat .
+  ?museum fp:hasLongitude ?long .
+} WHERE {
+  ?museum rdf:type dbo:Museum .
+  ?museum dbo:location dbr:Amsterdam .
+  ?museum dbo:type dbr:History_museum .
+  ?museum geo:lat ?lat .
+  ?museum geo:long ?long .
+} 
+
+getting art musea:
+CONSTRUCT{
+  ?museum rdf:type fp:ArtMusea .
+  ?museum fp:hasLatitude ?lat .
+  ?museum fp:hasLongitude ?long .
+} WHERE {
+  ?museum rdf:type dbo:Museum .
+  ?museum dbo:location dbr:Amsterdam .
+  ?museum dbo:type dbr:Art_museum .
+  ?museum geo:lat ?lat .
+  ?museum geo:long ?long .
+} 
