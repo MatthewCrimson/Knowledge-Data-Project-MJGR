@@ -1,0 +1,620 @@
+@prefix : <http://www.semanticweb.org/finalprojectgraphdb#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/finalprojectgraphdb> .
+
+<http://www.semanticweb.org/finalprojectgraphdb> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.semanticweb.org/group69/finalproject/City
+<http://www.semanticweb.org/group69/finalproject/City> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/group69/finalproject/hasBowlingCentre
+
+###  http://www.semanticweb.org/group69/finalproject/hasEscapeRoom
+
+###  http://www.semanticweb.org/group69/finalproject/hasGym
+
+###  http://www.semanticweb.org/group69/finalproject/hasMusea
+
+###  http://www.semanticweb.org/group69/finalproject/hasRestaurant
+
+###  http://www.semanticweb.org/group69/finalproject/hasShoppingPlace
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/hasLatitude
+<http://www.semanticweb.org/Bowling_Amsterdam/hasLatitude> rdf:type owl:DatatypeProperty ;
+                                                           owl:equivalentProperty <http://www.semanticweb.org/group69/finalproject/hasLatitude> ;
+                                                           rdf:type owl:FunctionalProperty ;
+                                                           rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/hasLongitude
+<http://www.semanticweb.org/Bowling_Amsterdam/hasLongitude> rdf:type owl:DatatypeProperty ;
+                                                            owl:equivalentProperty <http://www.semanticweb.org/group69/finalproject/hasLongitude> ;
+                                                            rdf:type owl:FunctionalProperty ;
+                                                            rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/hasLatitude
+<http://www.semanticweb.org/group69/finalproject/hasLatitude> rdf:type owl:DatatypeProperty ,
+                                                                       owl:FunctionalProperty ;
+                                                              rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/hasLongitude
+<http://www.semanticweb.org/group69/finalproject/hasLongitude> rdf:type owl:DatatypeProperty ,
+                                                                        owl:FunctionalProperty ;
+                                                               rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/Bowling_Amsterdam
+<http://www.semanticweb.org/Bowling_Amsterdam/Bowling_Amsterdam> rdf:type owl:Class ;
+                                                                 owl:equivalentClass <http://www.semanticweb.org/group69/finalproject/Bowling> ;
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/GlowMiniGolf
+<http://www.semanticweb.org/Bowling_Amsterdam/GlowMiniGolf> rdf:type owl:Class ;
+                                                            owl:equivalentClass <http://www.semanticweb.org/group69/finalproject/GlowInTheDarkGolf> ;
+                                                            rdfs:subClassOf <http://www.semanticweb.org/Bowling_Amsterdam/MiniGolf_Amsterdam> ,
+                                                                            <http://www.semanticweb.org/group69/finalproject/MiniGolf> .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/MiniGolf_Amsterdam
+<http://www.semanticweb.org/Bowling_Amsterdam/MiniGolf_Amsterdam> rdf:type owl:Class ;
+                                                                  owl:equivalentClass <http://www.semanticweb.org/group69/finalproject/MiniGolf> ;
+                                                                  rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/Amsterdam
+<http://www.semanticweb.org/group69/finalproject/Amsterdam> rdf:type owl:Class ;
+                                                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.semanticweb.org/group69/finalproject/hasBowlingCentre> ;
+                                                                                  owl:someValuesFrom <http://www.semanticweb.org/group69/finalproject/Bowling>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.semanticweb.org/group69/finalproject/hasEscapeRoom> ;
+                                                                                  owl:someValuesFrom <http://www.semanticweb.org/group69/finalproject/EscapeRooms>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.semanticweb.org/group69/finalproject/hasGym> ;
+                                                                                  owl:someValuesFrom <http://www.semanticweb.org/group69/finalproject/Gyms>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.semanticweb.org/group69/finalproject/hasMusea> ;
+                                                                                  owl:someValuesFrom <http://www.semanticweb.org/group69/finalproject/Musea>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.semanticweb.org/group69/finalproject/hasRestaurant> ;
+                                                                                  owl:someValuesFrom <http://www.semanticweb.org/group69/finalproject/Restaurants>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.semanticweb.org/group69/finalproject/hasShoppingPlace> ;
+                                                                                  owl:someValuesFrom <http://www.semanticweb.org/group69/finalproject/Shopping>
+                                                                                ] ;
+                                                            rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/City> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/ArtMusea
+<http://www.semanticweb.org/group69/finalproject/ArtMusea> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Musea> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/AsianRestaurant
+<http://www.semanticweb.org/group69/finalproject/AsianRestaurant> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Restaurants> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/Bowling
+<http://www.semanticweb.org/group69/finalproject/Bowling> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/City
+<http://www.semanticweb.org/group69/finalproject/City> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/group69/finalproject/EscapeRooms
+<http://www.semanticweb.org/group69/finalproject/EscapeRooms> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/FastFoodRestaurant
+<http://www.semanticweb.org/group69/finalproject/FastFoodRestaurant> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Restaurants> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/FrenchRestaurant
+<http://www.semanticweb.org/group69/finalproject/FrenchRestaurant> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Restaurants> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/GlowInTheDarkGolf
+<http://www.semanticweb.org/group69/finalproject/GlowInTheDarkGolf> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.semanticweb.org/Bowling_Amsterdam/MiniGolf_Amsterdam> ,
+                                                                                    <http://www.semanticweb.org/group69/finalproject/MiniGolf> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/Gyms
+<http://www.semanticweb.org/group69/finalproject/Gyms> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/HistoryMusea
+<http://www.semanticweb.org/group69/finalproject/HistoryMusea> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Musea> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/MiniGolf
+<http://www.semanticweb.org/group69/finalproject/MiniGolf> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/Musea
+<http://www.semanticweb.org/group69/finalproject/Musea> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/Restaurants
+<http://www.semanticweb.org/group69/finalproject/Restaurants> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/Shopping
+<http://www.semanticweb.org/group69/finalproject/Shopping> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/ShoppingDistrict
+<http://www.semanticweb.org/group69/finalproject/ShoppingDistrict> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Shopping> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/ShoppingMall
+<http://www.semanticweb.org/group69/finalproject/ShoppingMall> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Shopping> .
+
+
+###  http://www.semanticweb.org/group69/finalproject/WomenOnlyGyms
+<http://www.semanticweb.org/group69/finalproject/WomenOnlyGyms> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.semanticweb.org/group69/finalproject/Gyms> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://dbpedia.org/resource/Ciel_Bleu
+<http://dbpedia.org/resource/Ciel_Bleu> rdf:type owl:NamedIndividual ,
+                                                 <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                 <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                 <http://www.semanticweb.org/group69/finalproject/FrenchRestaurant> ,
+                                                 <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                        <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.34868"^^xsd:float ;
+                                        <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.8939333"^^xsd:float ;
+                                        <http://www.semanticweb.org/group69/finalproject/City> <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://dbpedia.org/resource/De_Kersentuin
+<http://dbpedia.org/resource/De_Kersentuin> rdf:type owl:NamedIndividual ,
+                                                     <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                     <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                     <http://www.semanticweb.org/group69/finalproject/FrenchRestaurant> ,
+                                                     <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                            <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.350967"^^xsd:float ;
+                                            <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.8740835"^^xsd:float ;
+                                            <http://www.semanticweb.org/group69/finalproject/City> <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://dbpedia.org/resource/EYE_Film_Institute_Netherlands
+<http://dbpedia.org/resource/EYE_Film_Institute_Netherlands> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/ArtMusea> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/HistoryMusea> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/Musea> ;
+                                                             <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.38441"^^xsd:float ;
+                                                             <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.900594"^^xsd:float .
+
+
+###  http://dbpedia.org/resource/Hermitage_Amsterdam
+<http://dbpedia.org/resource/Hermitage_Amsterdam> rdf:type owl:NamedIndividual ,
+                                                           <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                           <http://www.semanticweb.org/group69/finalproject/ArtMusea> ,
+                                                           <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                           <http://www.semanticweb.org/group69/finalproject/Musea> ;
+                                                  <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.365"^^xsd:float ;
+                                                  <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.9025"^^xsd:float .
+
+
+###  http://dbpedia.org/resource/Joods_Historisch_Museum
+<http://dbpedia.org/resource/Joods_Historisch_Museum> rdf:type owl:NamedIndividual ,
+                                                               <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                               <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                               <http://www.semanticweb.org/group69/finalproject/HistoryMusea> ,
+                                                               <http://www.semanticweb.org/group69/finalproject/Musea> ;
+                                                      <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.366943"^^xsd:float ;
+                                                      <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.904028"^^xsd:float .
+
+
+###  http://dbpedia.org/resource/La_Rive
+<http://dbpedia.org/resource/La_Rive> rdf:type owl:NamedIndividual ,
+                                               <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                               <http://www.semanticweb.org/group69/finalproject/City> ,
+                                               <http://www.semanticweb.org/group69/finalproject/FrenchRestaurant> ,
+                                               <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                      <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.359707"^^xsd:float ;
+                                      <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.905153"^^xsd:float ;
+                                      <http://www.semanticweb.org/group69/finalproject/City> <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://dbpedia.org/resource/Le_Restaurant
+<http://dbpedia.org/resource/Le_Restaurant> rdf:type owl:NamedIndividual ,
+                                                     <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                     <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                     <http://www.semanticweb.org/group69/finalproject/FrenchRestaurant> ,
+                                                     <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                            <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.355602"^^xsd:float ;
+                                            <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.8982196"^^xsd:float ;
+                                            <http://www.semanticweb.org/group69/finalproject/City> <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://dbpedia.org/resource/Museum_Fodor
+<http://dbpedia.org/resource/Museum_Fodor> rdf:type owl:NamedIndividual ,
+                                                    <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                    <http://www.semanticweb.org/group69/finalproject/ArtMusea> ,
+                                                    <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                    <http://www.semanticweb.org/group69/finalproject/Musea> ;
+                                           <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.363888"^^xsd:float ;
+                                           <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.893611"^^xsd:float .
+
+
+###  http://dbpedia.org/resource/Museum_Geelvinck-Hinlopen
+<http://dbpedia.org/resource/Museum_Geelvinck-Hinlopen> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                 <http://www.semanticweb.org/group69/finalproject/ArtMusea> ,
+                                                                 <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                 <http://www.semanticweb.org/group69/finalproject/Musea> ;
+                                                        <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.364166"^^xsd:float ;
+                                                        <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.891111"^^xsd:float .
+
+
+###  http://dbpedia.org/resource/Museum_Willet-Holthuysen
+<http://dbpedia.org/resource/Museum_Willet-Holthuysen> rdf:type owl:NamedIndividual ,
+                                                                <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                <http://www.semanticweb.org/group69/finalproject/ArtMusea> ,
+                                                                <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                <http://www.semanticweb.org/group69/finalproject/Musea> ;
+                                                       <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.365555"^^xsd:float ;
+                                                       <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.899167"^^xsd:float .
+
+
+###  http://dbpedia.org/resource/Rijksmuseum
+<http://dbpedia.org/resource/Rijksmuseum> rdf:type owl:NamedIndividual ,
+                                                   <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                   <http://www.semanticweb.org/group69/finalproject/ArtMusea> ,
+                                                   <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                   <http://www.semanticweb.org/group69/finalproject/HistoryMusea> ,
+                                                   <http://www.semanticweb.org/group69/finalproject/Musea> ;
+                                          <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.36"^^xsd:float ;
+                                          <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.885278"^^xsd:float .
+
+
+###  http://dbpedia.org/resource/Van_Gogh_Museum
+<http://dbpedia.org/resource/Van_Gogh_Museum> rdf:type owl:NamedIndividual ,
+                                                       <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                       <http://www.semanticweb.org/group69/finalproject/ArtMusea> ,
+                                                       <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                       <http://www.semanticweb.org/group69/finalproject/Musea> ;
+                                              <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.358418"^^xsd:float ;
+                                              <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.881083"^^xsd:float .
+
+
+###  http://dbpedia.org/resource/Vinkeles
+<http://dbpedia.org/resource/Vinkeles> rdf:type owl:NamedIndividual ,
+                                                <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                <http://www.semanticweb.org/group69/finalproject/FrenchRestaurant> ,
+                                                <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                       <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.369175"^^xsd:float ;
+                                       <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.8842835"^^xsd:float ;
+                                       <http://www.semanticweb.org/group69/finalproject/City> <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://dbpedia.org/resource/&samhoud_places
+<http://dbpedia.org/resource/&samhoud_places> rdf:type owl:NamedIndividual ,
+                                                       <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                       <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                       <http://www.semanticweb.org/group69/finalproject/FrenchRestaurant> ,
+                                                       <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                              <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.37662"^^xsd:float ;
+                                              <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.9053807"^^xsd:float ;
+                                              <http://www.semanticweb.org/group69/finalproject/City> <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://dbpedia.org/resource/Christophe_(Amsterdam)
+<http://dbpedia.org/resource/Christophe_(Amsterdam)> rdf:type owl:NamedIndividual ,
+                                                              <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                              <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                              <http://www.semanticweb.org/group69/finalproject/FrenchRestaurant> ,
+                                                              <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                                     <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.375732"^^xsd:float ;
+                                                     <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.8854084"^^xsd:float ;
+                                                     <http://www.semanticweb.org/group69/finalproject/City> <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://dbpedia.org/resource/De_Graaf_(restaurant)
+<http://dbpedia.org/resource/De_Graaf_(restaurant)> rdf:type owl:NamedIndividual ,
+                                                             <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                             <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                             <http://www.semanticweb.org/group69/finalproject/FrenchRestaurant> ,
+                                                             <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                                    <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.3534"^^xsd:float ;
+                                                    <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.863631"^^xsd:float ;
+                                                    <http://www.semanticweb.org/group69/finalproject/City> <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://dbpedia.org/resource/Excelsior_(restaurant)
+<http://dbpedia.org/resource/Excelsior_(restaurant)> rdf:type owl:NamedIndividual ,
+                                                              <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                              <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                              <http://www.semanticweb.org/group69/finalproject/FrenchRestaurant> ,
+                                                              <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                                     <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.367477"^^xsd:float ;
+                                                     <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.8941"^^xsd:float ;
+                                                     <http://www.semanticweb.org/group69/finalproject/City> <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://dbpedia.org/resource/Ron_Blaauw_(restaurant)
+<http://dbpedia.org/resource/Ron_Blaauw_(restaurant)> rdf:type owl:NamedIndividual ,
+                                                               <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                               <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                               <http://www.semanticweb.org/group69/finalproject/FrenchRestaurant> ,
+                                                               <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                                      <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.352146"^^xsd:float ;
+                                                      <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.8566165"^^xsd:float ;
+                                                      <http://www.semanticweb.org/group69/finalproject/City> <http://www.semanticweb.org/group69/finalproject/Amsterdam> .
+
+
+###  http://dbpedia.org/resource/Sichuan_Food_(restaurant)
+<http://dbpedia.org/resource/Sichuan_Food_(restaurant)> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                 <http://www.semanticweb.org/group69/finalproject/AsianRestaurant> ,
+                                                                 <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                 <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                                        <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.366478"^^xsd:float ;
+                                                        <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.8905473"^^xsd:float .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/DeKegel
+<http://www.semanticweb.org/Bowling_Amsterdam/DeKegel> rdf:type owl:NamedIndividual ,
+                                                                <http://www.semanticweb.org/Bowling_Amsterdam/Bowling_Amsterdam> ,
+                                                                <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                <http://www.semanticweb.org/group69/finalproject/Bowling> ,
+                                                                <http://www.semanticweb.org/group69/finalproject/City> ;
+                                                       <http://www.semanticweb.org/Bowling_Amsterdam/hasLatitude> "52.27747"^^xsd:float ;
+                                                       <http://www.semanticweb.org/Bowling_Amsterdam/hasLongitude> "4.837175"^^xsd:float .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/GlowAmsterdam
+<http://www.semanticweb.org/Bowling_Amsterdam/GlowAmsterdam> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.semanticweb.org/Bowling_Amsterdam/GlowMiniGolf> ,
+                                                                      <http://www.semanticweb.org/Bowling_Amsterdam/MiniGolf_Amsterdam> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/GlowInTheDarkGolf> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/MiniGolf> ;
+                                                             <http://www.semanticweb.org/Bowling_Amsterdam/hasLatitude> "52.37111"^^xsd:float ;
+                                                             <http://www.semanticweb.org/Bowling_Amsterdam/hasLongitude> "4.911795"^^xsd:float .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/GlowMinigolfMarnix
+<http://www.semanticweb.org/Bowling_Amsterdam/GlowMinigolfMarnix> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.semanticweb.org/Bowling_Amsterdam/GlowMiniGolf> ,
+                                                                           <http://www.semanticweb.org/Bowling_Amsterdam/MiniGolf_Amsterdam> ,
+                                                                           <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                           <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                           <http://www.semanticweb.org/group69/finalproject/GlowInTheDarkGolf> ,
+                                                                           <http://www.semanticweb.org/group69/finalproject/MiniGolf> ;
+                                                                  <http://www.semanticweb.org/Bowling_Amsterdam/hasLatitude> "52.382732"^^xsd:float ;
+                                                                  <http://www.semanticweb.org/Bowling_Amsterdam/hasLongitude> "4.882039"^^xsd:float .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/Knijn_Bowling_and_Restaurant
+<http://www.semanticweb.org/Bowling_Amsterdam/Knijn_Bowling_and_Restaurant> rdf:type owl:NamedIndividual ,
+                                                                                     <http://www.semanticweb.org/Bowling_Amsterdam/Bowling_Amsterdam> ,
+                                                                                     <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                                     <http://www.semanticweb.org/group69/finalproject/Bowling> ,
+                                                                                     <http://www.semanticweb.org/group69/finalproject/City> ;
+                                                                            <http://www.semanticweb.org/Bowling_Amsterdam/hasLatitude> "52.34437"^^xsd:float ;
+                                                                            <http://www.semanticweb.org/Bowling_Amsterdam/hasLongitude> "4.891413"^^xsd:float .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/MidgetgolfAmsterdam
+<http://www.semanticweb.org/Bowling_Amsterdam/MidgetgolfAmsterdam> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.semanticweb.org/Bowling_Amsterdam/MiniGolf_Amsterdam> ,
+                                                                            <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                            <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                            <http://www.semanticweb.org/group69/finalproject/MiniGolf> ;
+                                                                   <http://www.semanticweb.org/Bowling_Amsterdam/hasLatitude> "52.332"^^xsd:float ;
+                                                                   <http://www.semanticweb.org/Bowling_Amsterdam/hasLongitude> "4.893271"^^xsd:float .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/Powerzone
+<http://www.semanticweb.org/Bowling_Amsterdam/Powerzone> rdf:type owl:NamedIndividual ,
+                                                                  <http://www.semanticweb.org/Bowling_Amsterdam/Bowling_Amsterdam> ,
+                                                                  <http://www.semanticweb.org/Bowling_Amsterdam/MiniGolf_Amsterdam> ,
+                                                                  <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                  <http://www.semanticweb.org/group69/finalproject/Bowling> ,
+                                                                  <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                  <http://www.semanticweb.org/group69/finalproject/MiniGolf> ;
+                                                         <http://www.semanticweb.org/Bowling_Amsterdam/hasLatitude> "52.37791"^^xsd:float ;
+                                                         <http://www.semanticweb.org/Bowling_Amsterdam/hasLongitude> "4.90972"^^xsd:float .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/RacePlanet
+<http://www.semanticweb.org/Bowling_Amsterdam/RacePlanet> rdf:type owl:NamedIndividual ,
+                                                                   <http://www.semanticweb.org/Bowling_Amsterdam/Bowling_Amsterdam> ,
+                                                                   <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                   <http://www.semanticweb.org/group69/finalproject/Bowling> ,
+                                                                   <http://www.semanticweb.org/group69/finalproject/City> ;
+                                                          <http://www.semanticweb.org/Bowling_Amsterdam/hasLatitude> "52.39622"^^xsd:float ;
+                                                          <http://www.semanticweb.org/Bowling_Amsterdam/hasLongitude> "4.789833"^^xsd:float .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/Silverstone_Bowling
+<http://www.semanticweb.org/Bowling_Amsterdam/Silverstone_Bowling> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.semanticweb.org/Bowling_Amsterdam/Bowling_Amsterdam> ,
+                                                                            <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                            <http://www.semanticweb.org/group69/finalproject/Bowling> ,
+                                                                            <http://www.semanticweb.org/group69/finalproject/City> ;
+                                                                   <http://www.semanticweb.org/Bowling_Amsterdam/hasLatitude> "52.383465"^^xsd:float ;
+                                                                   <http://www.semanticweb.org/Bowling_Amsterdam/hasLongitude> "4.73444"^^xsd:float .
+
+
+###  http://www.semanticweb.org/Bowling_Amsterdam/Amstelborgh/Borchland
+<http://www.semanticweb.org/Bowling_Amsterdam/Amstelborgh/Borchland> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/Bowling_Amsterdam/Bowling_Amsterdam> ,
+                                                                              <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                              <http://www.semanticweb.org/group69/finalproject/Bowling> ,
+                                                                              <http://www.semanticweb.org/group69/finalproject/City> ;
+                                                                     <http://www.semanticweb.org/Bowling_Amsterdam/hasLatitude> "52.315407"^^xsd:float ;
+                                                                     <http://www.semanticweb.org/Bowling_Amsterdam/hasLongitude> "4.929406"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/BasicFit
+<http://www.semanticweb.org/group69/finalproject/BasicFit> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                    <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                    <http://www.semanticweb.org/group69/finalproject/Gyms> ;
+                                                           <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.36606"^^xsd:float ;
+                                                           <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.89928"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/BasicFitLadiesOnly
+<http://www.semanticweb.org/group69/finalproject/BasicFitLadiesOnly> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                              <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                              <http://www.semanticweb.org/group69/finalproject/Gyms> ,
+                                                                              <http://www.semanticweb.org/group69/finalproject/WomenOnlyGyms> ;
+                                                                     <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.36303"^^xsd:float ;
+                                                                     <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.877175"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/BurgerKing
+<http://www.semanticweb.org/group69/finalproject/BurgerKing> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/FastFoodRestaurant> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                                             <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.37384"^^xsd:float ;
+                                                             <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.892694"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/DeNegenStraatjes
+<http://www.semanticweb.org/group69/finalproject/DeNegenStraatjes> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                            <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                            <http://www.semanticweb.org/group69/finalproject/Shopping> ,
+                                                                            <http://www.semanticweb.org/group69/finalproject/ShoppingDistrict> ;
+                                                                   <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.372364"^^xsd:float ;
+                                                                   <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.884387"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/F45Training
+<http://www.semanticweb.org/group69/finalproject/F45Training> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                       <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                       <http://www.semanticweb.org/group69/finalproject/Gyms> ;
+                                                              <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.361034"^^xsd:float ;
+                                                              <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.898829"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/FitForFree
+<http://www.semanticweb.org/group69/finalproject/FitForFree> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/Gyms> ;
+                                                             <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.360043"^^xsd:float ;
+                                                             <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.893748"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/Gelderlandpein
+<http://www.semanticweb.org/group69/finalproject/Gelderlandpein> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                          <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                          <http://www.semanticweb.org/group69/finalproject/Shopping> ,
+                                                                          <http://www.semanticweb.org/group69/finalproject/ShoppingMall> ;
+                                                                 <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.33103"^^xsd:float ;
+                                                                 <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.877275"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/GustavGym
+<http://www.semanticweb.org/group69/finalproject/GustavGym> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                     <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                     <http://www.semanticweb.org/group69/finalproject/Gyms> ;
+                                                            <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.33639"^^xsd:float ;
+                                                            <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.870217"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/KFC
+<http://www.semanticweb.org/group69/finalproject/KFC> rdf:type owl:NamedIndividual ,
+                                                               <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                               <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                               <http://www.semanticweb.org/group69/finalproject/FastFoodRestaurant> ,
+                                                               <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                                      <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.374035"^^xsd:float ;
+                                                      <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.893997"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/Klaverstraat
+<http://www.semanticweb.org/group69/finalproject/Klaverstraat> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                        <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                        <http://www.semanticweb.org/group69/finalproject/Shopping> ,
+                                                                        <http://www.semanticweb.org/group69/finalproject/ShoppingDistrict> ;
+                                                               <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.37003"^^xsd:float ;
+                                                               <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.891363"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/MagnaPlaza
+<http://www.semanticweb.org/group69/finalproject/MagnaPlaza> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/Shopping> ,
+                                                                      <http://www.semanticweb.org/group69/finalproject/ShoppingMall> ;
+                                                             <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.37364"^^xsd:float ;
+                                                             <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.890429"^^xsd:float .
+
+
+###  http://www.semanticweb.org/group69/finalproject/McDonalds
+<http://www.semanticweb.org/group69/finalproject/McDonalds> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.semanticweb.org/group69/finalproject/Amsterdam> ,
+                                                                     <http://www.semanticweb.org/group69/finalproject/City> ,
+                                                                     <http://www.semanticweb.org/group69/finalproject/FastFoodRestaurant> ,
+                                                                     <http://www.semanticweb.org/group69/finalproject/Restaurants> ;
+                                                            <http://www.semanticweb.org/group69/finalproject/hasLatitude> "52.37688"^^xsd:float ;
+                                                            <http://www.semanticweb.org/group69/finalproject/hasLongitude> "4.897692"^^xsd:float .
+
+
+###  Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
