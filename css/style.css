@@ -1,3 +1,5 @@
+/* Reset and Font */
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +9,8 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+
+/* Header */
 
 header {
   height: 15vh;
@@ -22,6 +26,8 @@ header .box h2 {
   color: white;
 }
 
+/* Utility */
+
 .container {
   width: 80%;
   height: 100%;
@@ -31,6 +37,8 @@ header .box h2 {
   display: flex;
 }
 
+/* Main Section */
+
 #main-section {
   margin: 1.5rem 0;
   width: 100vw;
@@ -38,6 +46,7 @@ header .box h2 {
   display: flex;
 }
 
+/* Selection Box */
 #selection-box {
  height: 100%;
  width: 22.5%;
@@ -64,6 +73,7 @@ header .box h2 {
   font-weight: 1;
 }
 
+/* Selection List */
 #selection-list {
   height: 82.5%;
   margin-bottom: 1.35rem;
@@ -79,22 +89,51 @@ header .box h2 {
   overflow-y: scroll;
 }
 
-#selection-list ul a {
-  text-decoration: none;
-  color: inherit;
-  
+#selection-list ul li {
+  cursor: pointer;
+  position: relative;
 }
 
-#selection-list ul a:hover li{
+#selection-list ul li {
+  /* padding: .75rem; */
+  background: #f2f2f2;
+  margin-bottom: .1rem;
+  transition: all .2s ease-in-out;
+}
+
+#selection-list ul li:hover {
   background: #3498db;
   color: white;
 }
 
-#selection-list ul li {
+
+
+#selection-list ul li p {
   padding: .75rem;
-  background: #f2f2f2;
-  margin-bottom: .1rem;
+  margin: 0;
+  transition: all .2 ease-in-out;
+}
+
+#selection-list ul li .option {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0;
+  padding: 100%;
+  opacity: 0;
+}
+
+#selection-list ul li .option + p {
   transition: all .2s ease-in-out;
+}
+
+#selection-list ul li .option:not(:checked) + p {
+  transition: all .2s ease-in-out;
+}
+
+#selection-list ul li .option:checked + p {
+  color: #fff;
+  background:#0063B1;
 }
 
 #selection-box #search-button {
@@ -105,13 +144,23 @@ header .box h2 {
   justify-content: center;
 }
 
-#selection-box #search-button a {
+#selection-box #search-button #submit-button {
   text-decoration: none;
+  border-radius: 5px;
+  border: white 1px solid;
+  font-size: 1rem;
   text-align: center;
   padding: .75rem 40%;
   color: #fff;
   background: #3498db;
+  transition: all .2s ease-in-out;
 }
+
+#selection-box #search-button #submit-button:hover {
+  background: #0063B1;
+}
+
+/* Map */
 
 #map-box {
   display: flex;
@@ -126,6 +175,7 @@ header .box h2 {
   height: 100%;
 }
 
+/* Footer */
 footer {
   background: #f2f2f2;
   display: flex;
