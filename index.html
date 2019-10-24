@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-App="KRRclass" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 <body>
   <header>
     <div class="box">
-      <h2>Placeholder Title</h2>
+      <h2>Amstertainer</h2>
     </div>
   </header>
 
@@ -25,21 +25,22 @@
         <div id="selection-list">
           <ul>
             <form action="">
-            <li><input type="checkbox" value="Restaurants" class="option"><p>Restaurants</p></li>
-            <li><input type="checkbox" value="FrenchRestaurants" class="option"><p>French Restaurant</p></li>
-            <li><input type="checkbox" value="Fastfood" class="option"><p>Fastfood</p></li>
-            <li><input type="checkbox" value="Gyms" class="option"><p>Gyms</p></li>
-            <li><input type="checkbox" value="Musea" class="option"><p>Musea</p></li>
-            <li><input type="checkbox" value="Art" class="option"><p>Art Museum</p></li>
-            <li><input type="checkbox" value="History" class="option"><p>History Museum</p></li>
-            <li><input type="checkbox" value="EscapeRoom" class="option"><p>Escape Rooms</p></li>
-            <li><input type="checkbox" value="Bowling" class="option"><p>Bowling</p></li>
-            <li><input type="checkbox" value="Minigolf" class="option"><p>Minigolf</p></li>
-            <li><input type="checkbox" value="Shopping" class="option"><p>Shopping</p></li>
+            <li><input type="checkbox" id="Restaurants" class="option"><p>Restaurants</p></li>
+            <li><input type="checkbox" id="FrenchRestaurants" class="option"><p>French Restaurant</p></li>
+            <li><input type="checkbox" id="Fastfood" class="option"><p>Fastfood</p></li>
+            <li><input type="checkbox" id="Gyms" class="option"><p>Gyms</p></li>
+            <li><input type="checkbox" id="Musea" class="option"><p>Musea</p></li>
+            <li><input type="checkbox" id="Art" class="option"><p>Art Museum</p></li>
+            <li><input type="checkbox" id="History" class="option"><p>History Museum</p></li>
+            <li><input type="checkbox" id="EscapeRoom" class="option"><p>Escape Rooms</p></li>
+            <li><input type="checkbox" id="Bowling" class="option"><p>Bowling</p></li>
+            <li><input type="checkbox" id="Minigolf" class="option"><p>Minigolf</p></li>
+            <li><input type="checkbox" id="Shopping" class="option"><p>Shopping</p></li>
+            </form>
           </ul>
         </div>
-        <div id="search-button">
-          <input type="submit" value="GO!" id="submit-button"> </form>
+        <div id="search-button" ng-controller="MainCtrl">
+          <button class="btn" type="button" id="submit-button" ng-click="runQuery()">GO!</button>
         </div>
       </div>
       <div id="map-box">
@@ -53,9 +54,10 @@
               });
             }
           </script>
+          
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQKFCWds64MaPtnqdx43GmU_C9AqkmvVQ&callback=initMap"
           async defer></script>
-      
+          
           <!-- <iframe style="border: 0;" id="gmapframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.6189363129333!2d4.860395000000013!3d52.34105879999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5e1fdd341f395%3A0x13235aa64a7a300a!2sFred.+Roeskestraat+97%2C+1076+Amsterdam%2C+Netherlands!5e0!3m2!1sen!2s!4v1434453535936" frameborder="0"></iframe> -->
       </div>
     </div>
@@ -65,5 +67,10 @@
         <p>Copyright &copy; Team 69 so Damn Fine - All Rights Reserved</p>
     </div>
   </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/Chart.min.js"></script>
+  <script src="js/angular-chart.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
