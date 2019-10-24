@@ -5,17 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"> 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
   <title>K&D Project</title>
 </head>
 <body>
   <header>
-    <div class="box">
+    <div class="box" data-aos="fade-zoom-in" data-aos-duration="1000">
       <h2>Amstertainer</h2>
     </div>
   </header>
 
-  <section id="main-section">
+  <section id="main-section" data-aos="fade-up" data-aos-duration="1500">
     <div class="container">
       <div id="selection-box">
         <div id="selection-head">
@@ -64,13 +67,17 @@
   </section>
   <footer>
     <div class="footer-container">
-        <p>Copyright &copy; Team 69 so Damn Fine - All Rights Reserved</p>
+        <p>Copyright &copy; Team 69 - All Rights Reserved</p>
     </div>
   </footer>
+  <script>
+    AOS.init();
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/angular.min.js"></script>
   <script src="js/Chart.min.js"></script>
   <script src="js/angular-chart.min.js"></script>
   <script src="js/main.js"></script>
+  
 </body>
 </html>
