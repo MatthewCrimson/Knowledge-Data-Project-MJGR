@@ -1,0 +1,1 @@
+In order to use our application correctly, make sure you import our finalprojectDB.ttl into a GraphDB repository named 'finalproject' and open the 'index.html' file.
